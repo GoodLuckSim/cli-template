@@ -16,7 +16,8 @@ export default {
   },
   computed: {
     fullPath: function () {
-      return this.$route.fullPath
+      console.log(this)
+      return this.$route ? this.$route.fullPath : ''
     }
   }
 }

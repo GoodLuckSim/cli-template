@@ -1,13 +1,15 @@
 
 import { setLanguage } from '@/main'
 import { setToken } from '@/utils/auth'
+
 const state = {
   timeZone: 8,
   lang: 'en',
-  currency: 'vn',
+  currency: 'en',
   roles: [],
   cachedViews: [] // 已经打开的路由表
 }
+
 const mutations = {
   CHANGE_SETTING: (state, { key, value }) => {
     if (Object.prototype.hasOwnProperty.call(state, key)) {
@@ -15,6 +17,7 @@ const mutations = {
     }
   }
 }
+
 const actions = {
   // 主系统基础信息变更时，子项目同步信息
   changeSetting({ commit }, data) {

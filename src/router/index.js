@@ -12,9 +12,9 @@ export const router = [
   {
     path: '/index',
     component: () =>
-      import('@/views/moduleName/index'),
+      import('@/views/test/index'),
     name: 'a',
-    meta: { title: 'moduleName', icon: 'dashboard' },
+    meta: { title: 'test', icon: 'dashboard' },
     hidden: true,
     isSkipPermission: true
   }
@@ -25,11 +25,7 @@ const createRouter = () => new Router({
   base: window.__POWERED_BY_QIANKUN__ ? '/moduleName' : '/',
   routes: router
 })
-// const routers = createRouter()
 
-export function resetRouter() {
-  const newRouter = createRouter()
-  router.matcher = newRouter.matcher // reset router
-}
+const routers = createRouter()
 
-export default router
+export default routers

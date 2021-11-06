@@ -1,7 +1,7 @@
 import './public-path'
 import Vue from 'vue'
 import App from './App.vue'
-import routes from './router'
+import router from './router'
 import store from './store'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -20,7 +20,7 @@ Vue.use(FuseUI)
 
 new Vue({
   el: '#app',
-  routes,
+  router,
   store,
   i18n,
   render: h => h(App)
