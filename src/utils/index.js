@@ -49,11 +49,7 @@ export function parseTime(time, cFormat) {
  * @returns {string}
  */
 export function formatTime(time, option) {
-  if (('' + time).length === 10) {
-    time = parseInt(time) * 1000
-  } else {
-    time = +time
-  }
+  time = ('' + time).length === 10 ? parseInt(time) * 1000 : +time;
   const d = new Date(time)
   const now = Date.now()
 
@@ -69,11 +65,7 @@ export function formatTime(time, option) {
   } else if (diff < 3600 * 24 * 2) {
     return '1天前'
   }
-  if (option) {
-    return parseTime(time, option)
-  } else {
-    return (
-      d.getMonth() +
+  return option ? parseTime(time, option) : (d.getMonth() +
       1 +
       '月' +
       d.getDate() +
@@ -81,9 +73,7 @@ export function formatTime(time, option) {
       d.getHours() +
       '时' +
       d.getMinutes() +
-      '分'
-    )
-  }
+      '分');
 }
 
 /**
@@ -228,11 +218,7 @@ export function toggleClass(element, className) {
  * @returns {Date}
  */
 export function getTime(type) {
-  if (type === 'start') {
-    return new Date().getTime() - 3600 * 1000 * 24 * 90
-  } else {
-    return new Date(new Date().toDateString())
-  }
+  return type === 'start' ? new Date().getTime() - 3600 * 1000 * 24 * 90 : new Date(new Date().toDateString());
 }
 
 /**
@@ -353,11 +339,7 @@ export function removeClass(ele, cls) {
 export function getRemoteDate(num, date) {
   if (!num || isNaN(num) || num === undefined) return ''
   let now = ''
-  if (date) {
-    now = new Date(date)
-  } else {
-    now = new Date()
-  }
+  now = date ? new Date(date) : new Date();
   now.setDate(now.getDate() + num)
   return now
 }

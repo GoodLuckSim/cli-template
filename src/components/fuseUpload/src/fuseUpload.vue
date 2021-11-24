@@ -288,11 +288,7 @@ export default {
       const index = url.lastIndexOf('.')
       const ext = url.substr(index + 1)
 
-      if (photoType.indexOf(ext) > -1) {
-        type = 'photo'
-      } else {
-        type = ext
-      }
+      type = photoType.indexOf(ext) > -1 ? 'photo' : ext;
       return type
     },
     // 点击element upload组件预览

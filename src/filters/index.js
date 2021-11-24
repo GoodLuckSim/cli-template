@@ -89,11 +89,7 @@ export function formatDateId(time, cFormat) {
     if ((typeof time === 'number') && (time.toString().length === 10)) {
       time = time * 1000
     }
-    if ((typeof time === 'string') && time.indexOf('-') > -1) {
-      date = new Date(time)
-    } else {
-      date = new Date(time + offset_GMT * 60 * 1000 + timeZone * 60 * 60 * 1000)
-    }
+    date = (typeof time === 'string') && time.indexOf('-') > -1 ? new Date(time) : new Date(time + offset_GMT * 60 * 1000 + timeZone * 60 * 60 * 1000);
   }
 
   const formatObj = {
