@@ -169,7 +169,7 @@ export function funGetTime(date, type) {
 // 统一货币格式化
 function FunCurrency(num, local) {
   const currency = store.getters && store.getters.currency ? store.getters.currency : 'id'
-  if ((!num || num == null) && num !== 0) {
+  if ((!num || num === null) && num !== 0) {
     return '-'
   }
   if (num == '***') {
